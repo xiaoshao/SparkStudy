@@ -1,4 +1,4 @@
-package com;
+package com.batch;
 
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.types.DataTypes;
@@ -13,6 +13,6 @@ public class FirstDemo {
         StructType schema = new StructType(new StructField[]{
                 new StructField("first", DataTypes.StringType, true, Metadata.empty())
         });
-        ss.read().format("csv").schema(schema).load("input").write().format("json").save("output");
+        ss.read().format("csv").schema(schema).load("input/batch/FirstDemo").write().format("json").save("output/batch/FirstDemo");
     }
 }
