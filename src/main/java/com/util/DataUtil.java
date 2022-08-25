@@ -17,12 +17,12 @@ public class DataUtil {
 
         List<String> data = new ArrayList<>();
 
-        data.add("f1,s1,2021-10-1 10:10:10");
-        data.add("f2,s2,2021-10-1 10:10:11");
-        data.add("f3,s3,2021-10-1 10:10:11");
+        data.add("1,s1,2021-10-1 10:10:10");
+        data.add("2,s2,2021-10-1 10:10:11");
+        data.add("3,s3,2021-10-1 10:10:11");
         Dataset<String> dataset = sparkSession.createDataset(data, Encoders.STRING());
         StructType schema = new StructType(new StructField[]{
-                new StructField("first", DataTypes.StringType, true, Metadata.fromJson("{}")),
+                new StructField("first", DataTypes.IntegerType, true, Metadata.fromJson("{}")),
                 new StructField("second", DataTypes.StringType, true, Metadata.fromJson("{}")),
                 new StructField("timeId", DataTypes.TimestampType, true, Metadata.fromJson("{}"))
 

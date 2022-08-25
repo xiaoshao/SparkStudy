@@ -9,7 +9,7 @@ import org.apache.spark.sql.SparkSession;
 public class ParserExtensionDemo {
 
     public static void main(String[] args) {
-        SparkSession sparkSession = SparkSessionUtil.createSparkSessionWithMyParser("testApp");
+        SparkSession sparkSession = SparkSessionUtil.createSparkSessionWithMyExtension("testApp");
 
         Dataset<Row> dataset = DataUtil.createDataset(sparkSession);
 

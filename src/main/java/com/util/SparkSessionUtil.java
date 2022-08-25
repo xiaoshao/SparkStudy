@@ -1,9 +1,7 @@
 package com.util;
 
-import com.spark.extension.parser.MyParser;
 import com.spark.extension.parser.MyParserBuilder;
 import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.SparkSessionExtensions;
 
 public class SparkSessionUtil {
 
@@ -11,11 +9,13 @@ public class SparkSessionUtil {
         return SparkSession.builder().appName(applicationName).master("local[*]").getOrCreate();
     }
 
-    public static SparkSession createSparkSessionWithMyParser(String applicationName) {
-
-
+    public static SparkSession createSparkSessionWithMyExtension(String applicationName) {
         return SparkSession.builder().appName(applicationName).master("local[*]")
                 .withExtensions(MyParserBuilder.extensionBuilder())
                 .getOrCreate();
+    }
+
+    public static SparkSession localStandaloneSparkSession(String applicationName) {
+        return SparkSession.builder().appName(applicationName).master("spark://localhost:8080").getOrCreate();
     }
 }

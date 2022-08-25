@@ -9,12 +9,13 @@ class MyRule extends Rule[LogicalPlan] {
     plan.transformAllExpressions {
       case Add(left, right, _) => {
         println("this is add opt")
+        println("left " + left.getClass)
+        println("right " + right.getClass)
         if (isStaticAdd(left)) {
           right
         } else if (isStaticAdd(right)) {
           Add(left, Literal(3L))
-        }
-        else {
+        } else {
           Add(left, right)
         }
       }
