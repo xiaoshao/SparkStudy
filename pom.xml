@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <scala.version>2.12.7</scala.version>
+        <scala.version>2.13.8</scala.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
     </properties>
@@ -19,18 +19,18 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.12</artifactId>
-            <version>3.2.1</version>
+            <artifactId>spark-core_2.13</artifactId>
+            <version>3.2.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-sql_2.12</artifactId>
-            <version>3.2.1</version>
+            <artifactId>spark-sql_2.13</artifactId>
+            <version>3.2.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-streaming_2.12</artifactId>
-            <version>3.2.1</version>
+            <artifactId>spark-streaming_2.13</artifactId>
+            <version>3.2.2</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>

@@ -16,6 +16,11 @@ public class SparkSessionUtil {
     }
 
     public static SparkSession localStandaloneSparkSession(String applicationName) {
-        return SparkSession.builder().appName(applicationName).master("spark://localhost:8080").getOrCreate();
+        return SparkSession.builder().appName(applicationName)
+                .master("spark://localhost:7077")
+                .config("spark.executor.memory", "1G")
+                .config("spark.executor.cores", "1")
+                .config("spark.executor.instances", "1")
+                .getOrCreate();
     }
 }
