@@ -31,7 +31,7 @@ public class ModifyExecutorResource {
         SparkConf conf = sparkSession.sparkContext().getConf();
         StructType schema = new StructType(new StructField[]{
                 new StructField("name", DataTypes.StringType, true, Metadata.fromJson("{}")),
-                new StructField("age", DataTypes.IntegerType, true, Metadata.fromJson("{}")),
+                new StructField("age", DataTypes.TimestampType, true, Metadata.fromJson("{}")),
         });
         Dataset<Row> csv = sparkSession
                 .readStream()
