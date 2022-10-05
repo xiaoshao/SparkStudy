@@ -17,9 +17,6 @@ public class RuleExtensionDemo {
 
         Dataset<Row> rowDataset = sparkSession.sql("select 0 + first, first from temp_table");
 
-        System.out.println(rowDataset.queryExecution().optimizedPlan());
         rowDataset.show();
-
-//        rowDataset.write().format("console").save();
     }
 }
